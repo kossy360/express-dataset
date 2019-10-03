@@ -1,8 +1,12 @@
-var express = require('express');
-var router = express.Router();
+import { Router } from 'express';
+import eraseEvents from './eraseEvents';
+import events from './events';
+import actor from './actor';
 
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+const router = Router();
 
-module.exports = router;
+router.use('/erase', eraseEvents);
+router.use('/events', events);
+router.use('/actors', actor);
+
+export default router;
