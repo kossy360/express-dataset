@@ -1,42 +1,16 @@
 
-var getAllEvents = () => {
+export const getAllEvents = () => {
 
 };
 
-var addEvent = () => {
+export const addEvent = () => {
 
 };
 
-
-var getByActor = () => {
-
-};
-
-
-var eraseEvents = () => {
+export const getByActor = () => {
 
 };
 
-module.exports = {
-	getAllEvents: getAllEvents,
-	addEvent: addEvent,
-	getByActor: getByActor,
-	eraseEvents: eraseEvents
+export const eraseEvents = () => {
+
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

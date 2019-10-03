@@ -1,6 +1,7 @@
-var express = require('express');
-var router = express.Router();
+import { Router } from 'express';
+
+const router = Router();
 
 // Routes related to actor.
 
-module.exports = router;
+export default router;
