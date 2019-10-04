@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
-  const repos = sequelize.define('Repos', {
+  const repos = sequelize.define('repos', {
     id: {
-      type: DataTypes.UUID,
+      type: DataTypes.INTEGER,
       unique: true,
       primaryKey: true,
       allowNull: false,
@@ -14,11 +14,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-  });
+  }, { timestamps: false });
 
   repos.associate = (models) => {
-    repos.belongsTo(models.Actors);
-    repos.belongsTo(models.Events);
+    repos.belongsTo(models.actors);
+    repos.hasMany(models.events);
   };
   return repos;
 };

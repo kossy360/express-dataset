@@ -1,7 +1,12 @@
 import { Router } from 'express';
+import { getAllActors, updateActor, getStreak } from '../controllers/actors';
 
 const router = Router();
 
-// Routes related to actor.
+router.get('/', getAllActors);
+
+router.put('/', updateActor);
+
+router.get('/streak', getStreak);
 
 export default router;

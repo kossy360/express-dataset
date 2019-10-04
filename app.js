@@ -2,10 +2,8 @@ import http from 'http';
 import express from 'express';
 import logger from 'morgan';
 import { json, urlencoded } from 'body-parser';
-import models from './models';
 
 import index from './routes/index';
-
 
 const app = express();
 
@@ -16,7 +14,6 @@ app.use(logger('dev'));
 app.use(json());
 app.use(urlencoded({ extended: false }));
 
-models.sequelize.sync();
 app.use('/', index);
 
 app.use((req, res, next) => {
@@ -34,4 +31,5 @@ app.use((err, req, res, next) => {
 
 server.listen(process.env.PORT || 3000);
 
-export default app;
+module.exports = server;
+export default server;

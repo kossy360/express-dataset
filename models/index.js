@@ -6,7 +6,7 @@ const basename = _basename(__filename);
 const db = {};
 const sequelize = new Sequelize({
   dialect: 'sqlite',
-  storage: 'storage.sqlite',
+  storage: process.env.NODE_ENV === 'test' ? ':memory:' : 'storage.sqlite',
   logging: false,
 });
 

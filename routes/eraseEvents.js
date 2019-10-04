@@ -1,7 +1,8 @@
 import { Router } from 'express';
+import { eraseEvents } from '../controllers/events';
 
 const router = Router();
 
-// Route related to delete events
+router.delete('/', eraseEvents);
 
 export default router;
