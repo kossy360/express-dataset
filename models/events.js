@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
-  const events = sequelize.define('Events', {
+  const events = sequelize.define('events', {
     id: {
-      type: DataTypes.UUID,
+      type: DataTypes.INTEGER,
       unique: true,
       primaryKey: true,
       allowNull: false,
@@ -10,15 +10,15 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    avatar_url: {
+    created_at: {
       type: DataTypes.DATE,
       allowNull: false,
     },
-  });
+  }, { timestamps: false });
 
   events.associate = (models) => {
-    events.belongsTo(models.Actors);
-    events.hasOne(models.Repos);
+    events.belongsTo(models.actors);
+    events.belongsTo(models.repos);
   };
   return events;
 };
